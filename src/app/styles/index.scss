@@ -1,0 +1,115 @@
+@import "reset";
+@import "variables/global";
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@font-face {
+    font-family: 'Inter';
+    src: url('../../assets/fonts/Inter-Regular.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.5rem;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    position: relative;
+}
+.progress-bar-container,
+.progress-marker-container {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+.progress-marker-container {
+    position: absolute;
+    top: 0;
+}
+
+progress {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 32px;
+}
+
+progress::-webkit-progress-bar {
+    background-color: var(--overlay-color);
+}
+progress::-webkit-progress-value {
+    background-color: var(--main-color-theme);
+}
+.progress-item-1::-webkit-progress-value {
+    border-radius: 20px 0 0 20px;
+}
+.progress-item-1::-webkit-progress-bar {
+    border-radius: 20px 0 0 20px;
+}
+.progress-item-6::-webkit-progress-value {
+    border-radius: 0 20px 20px 0;
+}
+.progress-item-6::-webkit-progress-bar {
+    border-radius: 0 20px 20px 0;
+}
+
+.button-control-container {
+    margin-top: 80px;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.button {
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+.button:focus {
+    outline: 2px solid var(--main-color-theme);
+}
+
+.progress-marker__step {
+    width: 100%;
+    display: block;
+    position: relative;
+    height: 32px;
+}
+
+.progress-marker__step:is(:not(:last-child)) {
+    border-right: 1px solid var(--secondary-color-theme);
+}
+
+.progress-marker__icon {
+    position: absolute;
+    top: -24px;
+    right: -12px;
+    width: 20px;
+    height: 20px;
+}
+
+.progress-marker__text {
+    position: absolute;
+    top: 36px;
+    right: -12px;
+    color: #808080;
+}
+
+
