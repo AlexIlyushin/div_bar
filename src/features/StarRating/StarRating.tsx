@@ -31,8 +31,10 @@ const StarRating = () => {
         const isLastStage = getIsLastStage(stage);
         const isPlayed = getIsPlayed(stage);
         const hasBestResult = sumStageProgress >= stage.thresholdPoints;
-        const iconFill =
-            isPlayed || hasBestResult ? 'var(--main-color-theme)' : 'none';
+        const iconClassname =
+            isPlayed || hasBestResult
+                ? 'progress-marker__icon--filled'
+                : 'progress-marker__icon--normal';
 
         return (
             <div key={stage.id} className="progress-marker__step">
@@ -44,8 +46,7 @@ const StarRating = () => {
                         />
                     ) : (
                         <StarIcon
-                            fill={iconFill}
-                            className="progress-marker__icon"
+                            className={`progress-marker__icon ${iconClassname}`}
                         />
                     )}
                 </div>
